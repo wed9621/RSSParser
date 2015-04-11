@@ -1,0 +1,5 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="RSSParcer2.0" EntryPointType="RSSParcer2._0.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="RSSParcer2.0" Source="RSSParcer2.0.dll" />
+  </Deployment.Parts>
+</Deployment>

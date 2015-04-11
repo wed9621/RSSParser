@@ -1,0 +1,130 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RSSParcer2._0.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portraitorlandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
+    <Grid x:Name="LayoutRoot" >
+        
+        <!-- ПРИМЕЧАНИЕ О ЛОКАЛИЗАЦИИ:
+            Чтобы локализовать отображаемые строки, скопируйте их значения в соответствующим образом названные
+            ключи в файле ресурсов нейтрального языка приложения (AppResources.resx), а затем
+            замените жестко заданное текстовое значение между кавычками атрибутов
+            на выражение привязки, указывающее на имя соответствующей строки.
+
+            Пример:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            Данная привязка указывает на строковый ресурс шаблона с именем "ApplicationTitle".
+
+            Добавление поддерживаемых языков на вкладку "Свойства проекта" создает
+            новый RESX-файл для каждого языка, в котором могут храниться переведенные значения
+            строк пользовательского интерфейса. Привязка в этих примерах вызывает отрисовку
+            значений атрибутов из RESX-файла, соответствующего
+            CurrentUICulture приложения во время выполнения.
+         -->
+
+         <!--Элемент управления Panorama-->
+        <phone:Panorama>
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="BackGround.jpg"/>
+            </phone:Panorama.Background>
+            <!--Первый элемент Panorama-->
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Мир">
+                    <ListBox Name="List_World">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <!--<Image Height="80" Width="80" Source="http://fakty.ua/images/logo.png" Margin="12,0,9,0"/>-->
+                                <TextBlock Text="{Binding Path = Title_World}" FontSize="24"  Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_World}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_World}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+            <!--Второй элемент Panorama-->
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Политика">
+                <ListBox Name="List_Policy">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding Path = Title_Policy}" FontSize="25"  TextWrapping="Wrap" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_Policy}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_Policy}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+            <!--Третий элемент Panorama-->
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Происшествия">
+                <ListBox Name="List_Ocations">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding Path = Title_Ocations}" FontSize="25"  TextWrapping="Wrap" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_Ocations}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_Ocations}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+            <!--Четвёртый элемент Panorama-->
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Здоровье">
+                <ListBox Name="List_Health">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding Path = Title_Health}" FontSize="25"  TextWrapping="Wrap" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_Health}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_Health}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+            <!--Пятый элемент Panorama-->
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Спорт">
+                <ListBox Name="List_Sport">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding Path = Title_Sport}" FontSize="25"  TextWrapping="Wrap" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_Sport}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_Sport}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+            <phone:PanoramaItem Foreground="{StaticResource PhoneAccentBrush}" Header="Анекдоты">
+                <ListBox Name="List_Anekdot">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10">
+                                <TextBlock Text="{Binding Path = Title_anekdot}" FontSize="25"  TextWrapping="Wrap" Foreground="{StaticResource PhoneAccentBrush}"></TextBlock>
+                                <TextBlock Text="{Binding Path = pubDate_anekdot}" Foreground="Gainsboro" FontSize="17"></TextBlock>
+                                <TextBlock Text="{Binding Path = Description_anekdot}" Foreground="Azure" FontSize="20" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+     </Grid>
+</phone:PhoneApplicationPage>
